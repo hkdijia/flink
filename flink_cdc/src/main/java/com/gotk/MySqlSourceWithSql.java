@@ -1,11 +1,11 @@
-package gotk;
+package com.gotk;
 
-import com.sun.rowset.internal.Row;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.Table;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
+import org.apache.flink.types.Row;
 
 /**
  * @author HuangKai
@@ -41,7 +41,7 @@ public class MySqlSourceWithSql {
         Table table = tableEnv.sqlQuery("select * from mysql_binlog");
 
         //4.将动态表转换为流
-        DataStream<Tuple2<Boolean, com.sun.rowset.internal.Row>> retractStream = tableEnv.toRetractStream(table, Row.class);
+        DataStream<Tuple2<Boolean, Row>> retractStream = tableEnv.toRetractStream(table, Row.class);
         retractStream.print();
 
         //5.启动任务

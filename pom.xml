@@ -16,6 +16,7 @@
 
     <modules>
         <module>flink_cdc</module>
+        <module>flink_realtime</module>
     </modules>
 
 

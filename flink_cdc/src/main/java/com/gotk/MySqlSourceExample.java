@@ -1,4 +1,4 @@
-package gotk;
+package com.gotk;
 
 import com.ververica.cdc.connectors.mysql.source.MySqlSource;
 import com.ververica.cdc.connectors.mysql.table.StartupOptions;

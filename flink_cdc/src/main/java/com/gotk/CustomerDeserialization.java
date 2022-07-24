@@ -1,4 +1,4 @@
-package gotk;
+package com.gotk;
 
 /**
  * @author HuangKai
